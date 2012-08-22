@@ -17,13 +17,20 @@ else
   #setup the round
   rounds_played += 1
   
-  #initialize new weights each turn
-  s_count = 0
-  r_count = 0
-  p_count = 0
-  
   #get the last 4 games.
-  last_list = glist[:]
+  last_list = glist[-4:]
+  
+  #save possibilities in list of ["GUESS", PATTERN_LENGTH]
+  
+  #iterate through the list to find patterns
+  i = 0
+  pattern_max = 4
+  while pattern_max > 0 :
+    while i < rounds_played - pattern_max :
+      if glist[i:i+pattern_max+1] == last_list :
+	    
+	  
+  pattern_max -= 1
   
   output = random.choice( ['R', 'S', 'P'] )
   g_list = g_list + [ (input[:], output[:]) ]
