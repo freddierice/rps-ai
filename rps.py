@@ -22,8 +22,8 @@ else
   r_count = 0
   p_count = 0
   
-  #while statement that adds to the weights 
-  #based on patterns.
+  #get the last 4 games.
+  last_list = glist[:]
   
   output = random.choice( ['R', 'S', 'P'] )
   g_list = g_list + [ (input[:], output[:]) ]
