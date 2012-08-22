@@ -7,21 +7,23 @@ import random
 #---------------- Check First ----------------#
 if input == '' :
   output = random.choice( ['R', 'S', 'P'] )
-  p_list = [ input[:] ]
-  c_list = [ output[:] ]
+  g_list = [ (input[:], output[:]) ]
   rounds_played = 1
 elif rounds_played <= 5 :
   output = random.choice( ['R', 'S', 'P'] )
-  p_list = p_list + [ input[:] ]
-  c_list = c_list + [ output[:] ]
+  g_list = g_list + [ (input[:], output[:]) ]
   rounds_played += 1
 else
   #setup the round
   rounds_played += 1
-  #print rounds_played
-  p_list = p_list + [ input[:] ]
   
+  #initialize new weights each turn
+  s_count = 0
+  r_count = 0
+  p_count = 0
   
+  #while statement that adds to the weights 
+  #based on patterns.
   
   output = random.choice( ['R', 'S', 'P'] )
-  c_list = c_list + [ output[:] ]
+  g_list = g_list + [ (input[:], output[:]) ]
