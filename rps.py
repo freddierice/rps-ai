@@ -4,16 +4,20 @@
 #------------------ Imports ------------------#
 import random
 
+#---------------- Utility Defs ---------------#
+
+
 #---------------- Check First ----------------#
 if input == '' :
   output = random.choice( ['R', 'S', 'P'] )
-  g_list = [ (input[:], output[:]) ]
+  g_list = [ ]
   rounds_played = 1
 elif rounds_played <= 5 :
+  g_list.append( [ (input[:], output[:]) ] )
   output = random.choice( ['R', 'S', 'P'] )
-  g_list = g_list + [ (input[:], output[:]) ]
   rounds_played += 1
-else
+else:
+  g_list.append([(input[:], output[:])])
   #setup the round
   rounds_played += 1
   
@@ -21,6 +25,7 @@ else
   last_list = glist[-4:]
   
   #save possibilities in list of ["GUESS", PATTERN_LENGTH]
+  guess_list = []
   
   #iterate through the list to find patterns
   i = 0
@@ -29,8 +34,8 @@ else
     while i < rounds_played - pattern_max :
       if glist[i:i+pattern_max+1] == last_list :
 	    
-	  
-  pattern_max -= 1
+	  i += 1
+    pattern_max -= 1
   
   output = random.choice( ['R', 'S', 'P'] )
-  g_list = g_list + [ (input[:], output[:]) ]
+  
