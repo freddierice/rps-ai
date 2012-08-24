@@ -28,13 +28,16 @@ else:
   guess_list = []
   
   #iterate through the list to find patterns
-  i = 0
   pattern_max = 4
-  while pattern_max > 0 :
-    while i < rounds_played - pattern_max :
+  pattern_min = 2
+  while pattern_max >= pattern_min :
+    i = 0
+    while i < rounds_played - pattern_max - 2 : #don't look at the very last one
       if glist[i:i+pattern_max+1] == last_list :
 	    
 	  i += 1
+	if glist[i:i+pattern_max+1] == last_list :  #very last case: depends on input
+	  
     pattern_max -= 1
   
   output = random.choice( ['R', 'S', 'P'] )
