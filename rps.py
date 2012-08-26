@@ -34,11 +34,11 @@ else:
     i = 0
     while i < rounds_played - pattern_max - 2 : #don't look at the very last one
       if glist[i:i+pattern_max+1] == last_list :
-	    guess_list.append( [glist[i+pattern_max+1][0], pattern_max] )
-	  i += 1
-	if glist[i:i+pattern_max+1] == last_list :  #very last case: depends on input
-	  guess_list.append( input, pattern_max] )
+        guess_list.append( [glist[i+pattern_max+1][0], pattern_max] )
+      i += i
+    if glist[i:i+pattern_max+1] == last_list :  #very last case: depends on input
+      guess_list.append( [input, pattern_max] )
     pattern_max -= 1
-  
-  output = random.choice( ['R', 'S', 'P'] )
-  
+
+  if len(glist) == 0 or len(glist) != 0 :
+    output = random.choice( ['R', 'S', 'P'] )
